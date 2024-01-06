@@ -57,7 +57,7 @@ Connect ESP32 cams to the system as described in ESP32 Cam Setup Guide.
 Connect sensors:
 
 Connect the ultrasonic sensor, rain sensor, and buzzer to the system as described in Sensor Setup Guide.
-Installation
+## Installation
 Install Machine Learning Dependencies:
 
 For the top camera (YOLO V3):
@@ -76,14 +76,14 @@ Connect the ultrasonic sensor, rain sensor, and buzzer to the system as describe
 Voice Assistant (Planned):
 
 Google Voice Assistant integration is planned for future releases.
-Usage
+## Usage
 Run the application:
 
 Mention how to start the application.
 Navigation:
 
 Follow the on-screen or voice instructions for navigation.
-Contributing
+## Contributing
 We welcome contributions! If you'd like to contribute to S.A.N.J.A.Y, please follow our Contribution Guidelines.
 
 License
