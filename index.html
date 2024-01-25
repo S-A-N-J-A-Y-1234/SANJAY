@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection Results</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Object Detection Results</h1>
+
+    <div id="results-container"></div>
+
+    <script>
+
+        function fetchResults() {
+            fetch('/detect')
+                .then(response => response.json())
+                .then(data => {
+                    displayResults(data);
+                })
+                .catch(error => {
+                    console.error('Error fetching results:', error);
+                });
+        }
+
+
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('results-container');
+            resultsContainer.innerHTML = '';
+
+            if (results.error) {
+                // Handle error case
+                resultsContainer.innerHTML = `<p>Error: ${results.error}</p>`;
+            } else if (results.length > 0) {
+                // Display each detected object
+                results.forEach(obj => {
+                    const resultElement = document.createElement('div');
+                    resultElement.innerHTML = `
+                        <p>Name: ${obj.name}</p>
+                        <p>Confidence: ${obj.confidence}</p>
+                        <p>Bounding Box: ${obj.bounding_box.join(', ')}</p>
+                        <hr>
+                    `;
+                    resultsContainer.appendChild(resultElement);
+                });
+            } else {
+                // No objects detected
+                resultsContainer.innerHTML = '<p>No objects detected</p>';
+            }
+        }
+
+
+        window.onload = function () {
+            fetchResults();
+            // Optionally, you can set up a periodic refresh
+            setInterval(fetchResults, 2000); // Refresh every 5 seconds
+        };
+    </script>
+</body>
+</html>
