@@ -1,7 +1,7 @@
 #include <WebServer.h>
 #include <WiFi.h>
 #include <esp32cam.h>
- 
+ //
 const char* WIFI_SSID = "PDSIT";
 const char* WIFI_PASS = "";
  
