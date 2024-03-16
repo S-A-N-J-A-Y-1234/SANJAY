@@ -1,0 +1,5 @@
+ESP32 CAM      FTDI
+5V              VCC
+VOR             TX
+VOT             RX
+GND             GND
