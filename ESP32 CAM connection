@@ -3,3 +3,5 @@ ESP32 CAM      FTDI
 VOR             TX
 VOT             RX
 GND             GND
+
+programming mode short: GND and IO0
